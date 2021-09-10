@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Cliente</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>    
+    
+    <!--Menú de opciones -->
+    <header>        
+    </header>
+    <!-- Fin de menú de opciones -->
+    <main class="container">
+      <div class="py-5 text-center">        
+        <h2>Nuevo Cliente</h2>
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <img width="95%" src="image/img3.jpg" srcset="" alt="Administradores">
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registro de Cliente</h4>
+          <hr class="my-4">
+          <form action="administradorList.html" id="frmAdministrador" class="needs-validation" novalidate  method="GET">
+            <div class="row g-3">              
+
+                <div class="col-sm-6">
+                    <label for="txtCodigoCliente" class="form-label">Código:</label>
+                    <input type="text" class="form-control" id="txtCodigoCliente" placeholder="Ingrese su código de Cliente" value="" required>    
+                </div>
+  
+                <div class="col-sm-6">
+                    <label for="txtCedulaCliente" class="form-label">Cédula:</label>
+                    <input type="text" class="form-control" id="txtCedulaCliente" placeholder="Ingrese su numero de cedula">                
+                </div>
+              
+                <div class="col-sm-6">
+				    <label for="txtNombreAdmin" class="form-label">Nombre: </label>
+					<input type="text" class="form-control" id="txtNombreAdmin" placeholder="Ingrese su nombre" />
+	     		</div>
+
+				<div class="col-sm-6">
+					<label for="txtTelefonoAdmin">Teléfono:</label>
+					<input type="text" class="form-control" id="txtTelefonoAdmin" placeholder="Ingrese su numero de telefono" />
+				</div>
+
+				<div class="col-sm-6">
+					<label for="txtEmailAdmin">Email</label>
+					<input type="email" class="form-control" id="txtEmailAdmin" placeholder="Ingrese su email" />
+                </div>
+
+            </div>         
+            <hr class="my-4">       
+            <button type="submit" class="w-100 btn btn-success btn-lg">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script>        
+    <script src="js/main.js"></script> 
+    <script src="js/script-invernadero-form.js"></script> 
+</body>
+</html>

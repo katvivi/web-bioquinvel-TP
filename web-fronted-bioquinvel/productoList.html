@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Productos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>    
+</head>
+<body>    
+    
+    <!--Menú de opciones -->
+    <header></header>
+    <!-- Fin de menú de opciones -->
+    <main>
+        <section class="py-5 container">
+          <div id="divEjemplo"></div>
+          <h3>Listado de Productos</h3>
+          <hr>          
+          <table class="table">
+            <thead>
+              <tr>                
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>                
+                <th scope="col">
+                  <a href="productoForm.html" class="btn btn-success">Nueva</a>
+                </th>                            
+              </tr>
+            </thead>
+            <tbody id="tblProductos">
+            </tbody>                        
+          </table>
+
+        <!-- Modal Variedad-->
+        <div class="modal fade" id="mdProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="lblNombre"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">               
+                    <label>Código:</label>
+                    <span id="spCodigo"></span><br>
+                    <label>Nombre:</label>
+                    <span id="spNombre"></span><br>
+                    <label>Descripción:</label>
+                    <span id="spDescripcion"></span><br>
+                    <label>Precio:</label>
+                    <span id="spPrecio"></span><br>     
+
+                    <input class="form-control" type="hidden" id="txtIdProducto"> <!-- Es un control que contiene el valor del ID de la variedad consultada -->                    
+              </div>
+              <div class="modal-footer">
+                <button id="btnEliminar" type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </section>      
+    </main>
+    <footer></footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script-variedad-list.js"></script>
+</body>
+</html>

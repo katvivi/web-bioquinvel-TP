@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Productos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>    
+    
+    <!--Menú de opciones -->
+    <header>        
+    </header>
+    <!-- Fin de menú de opciones -->
+    <main class="container">
+      <div class="py-5 text-center">        
+        <h2>Nuevo Producto</h2>
+      
+        <div class="input-group mb-3">
+          <input id="txtBuscar" type="text" class="form-control" placeholder="Buscar por nombre o id" aria-label="Buscar por nombre o id" aria-describedby="button-addon2">
+          <button id="btnBuscar" class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+        </div>
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <img width="95%" src="image/Producto1.jpg"  alt="Productos Quimico">
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registro de Producto</h4>
+          <hr class="my-4">
+          <form method="POST" action="productoList.html" id="frmProducto" class="needs-validation" novalidate>
+            <input type="hidden" id="txtIdProducto">
+
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="txtcodigoProd" class="form-label">Código: </label>
+                <input type="text" class="form-control" id="txtcodigoProd" placeholder="Ingrese código del producto" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="txtnombreProd" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="txtnombreProd" placeholder="Ingrese nombre del producto" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="txtdescripcionProd" class="form-label">Descripción:</label>
+                <textarea class="form-control" name="txtdescripcionProd" id="txtdescripcionProd" rows="5" ></textarea>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="txtprecioProd" class="form-label">Precio:</label>
+                <input type="text" class="form-control" id="txtprecioProd" placeholder="Ingrese el precio del producto" value="0">                
+              </div>
+            </div>         
+            <hr class="my-4">       
+            <button type="submit" class="w-100 btn btn-success btn-lg">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+      <footer>
+      </footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script>    
+    <script src="js/main.js"></script> 
+    <script src="js/productoForm.js"></script> 
+</body>
+</html>
