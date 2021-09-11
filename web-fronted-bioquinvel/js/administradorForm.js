@@ -1,9 +1,9 @@
-function set(producto){
-    $("#txtcodigoProd").val(producto.codigo);
-    $("#txtnombreProd").val(producto.nombre);
-    $("#txtdescripcionProd").val(producto.descripcion);
-    $("#txtprecioProd").val(producto.precio);
-    $("#txtIdProducto").val(producto.idProducto);
+function set(administrador){
+    $("#txtCodigoAdmin").val(administrador.codigoAdmin);
+    $("#txtCedulaAdmin").val(administrador.cedula);
+    $("#txtNombreAdmin").val(administrador.nombre);
+    $("#txtTelefonoAdmin").val(administrador.telefono);
+    $("#txtEmailAdmin").val(administrador.email);
 }
 
 function retrieve(){       
@@ -15,12 +15,12 @@ function retrieve(){
     if(isNaN(id)){
         $.ajax({        
             type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/producto/retrieve?nombre="+ txtBuscarProd, //Dirección para realizar la petición HTTP        
+            url: "http://localhost:8080/administrador/retrieve?nombre="+ txtBuscarProd, //Dirección para realizar la petición HTTP        
             contentType : "application/json",
             dataType : "json",
             success : function(response){
                 console.log(response);    
-                //El response contiene el objeto producto consultado
+                //El response contiene el objeto administrador consultado
                 set(response);                            
 		    },
 		    error : function(err){
@@ -37,12 +37,12 @@ function retrieve(){
     else{
         $.ajax({        
             type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/producto/retrieve/" + id, //Dirección para realizar la petición HTTP        
+            url: "http://localhost:8080/administrador/retrieve/" + id, //Dirección para realizar la petición HTTP        
             contentType : "application/json",
             dataType : "json",
             success : function(response){
                 console.log(response);    
-                //El response contiene el objeto producto consultado
+                //El response contiene el objeto administrador consultado
                 set(response);                            
 		    },
 		    error : function(err){
@@ -59,27 +59,27 @@ function retrieve(){
 }
 
 function serializeForm(){
-    let producto = {
+    let administrador = {
         "codigo" : $("#txtcodigoProd").val(),
         "nombre" : $("#txtnombreProd").val(),
         "descripcion" : $("#txtdescripcionProd").val(), 
         "precio" : $("#txtprecioProd").val(),  
-        "idProducto" : $("#txtIdProducto").val()
+        "idadministrador" : $("#txtIdadministrador").val()
     };
-    return producto;
+    return administrador;
 }
 
 function save(){
     //Crear el objeto
-    var producto = serializeForm();
-    console.log(producto);
-    var requestBody = JSON.stringify(producto);
+    var administrador = serializeForm();
+    console.log(administrador);
+    var requestBody = JSON.stringify(administrador);
     console.log(requestBody);
     //Utilizar jQuery AJAX para enviar al Backend
-    if(producto.idProducto == 0){
+    if(administrador.idadministrador == 0){
         $.ajax({        
             type: "POST", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/producto/create", //Dirección para realizar la petición HTTP
+            url: "http://localhost:8080/administrador/create", //Dirección para realizar la petición HTTP
             data: requestBody, //El contenido Body de la petición HTTP                
             contentType : "application/json",
             crossDomain: true,
@@ -94,10 +94,10 @@ function save(){
     }
     else{
         //Update
-        let id = producto.idProducto;
+        let id = administrador.idadministrador;
         $.ajax({        
             type: "PUT", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/producto/update/" + id, //Dirección para realizar la petición HTTP
+            url: "http://localhost:8080/administrador/update/" + id, //Dirección para realizar la petición HTTP
             data: requestBody, //El contenido Body de la petición HTTP                
             contentType : "application/json",
             crossDomain: true,
@@ -114,8 +114,8 @@ function save(){
 
 $(function() {       
 
-    $('#frmProducto').on('submit', function() {
-        var form = document.getElementById('frmProducto');
+    $('#frmadministrador').on('submit', function() {
+        var form = document.getElementById('frmadministrador');
         var a = form.checkValidity();
         console.log(a);
         if(a){

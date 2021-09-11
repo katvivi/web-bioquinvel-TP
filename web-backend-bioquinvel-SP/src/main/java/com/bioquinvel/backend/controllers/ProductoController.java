@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bioquinvel.backend.models.entities.Producto;
 import com.bioquinvel.backend.models.service.interfaces.IProductoService;
+
 
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController
@@ -55,6 +57,20 @@ public class ProductoController {
 		}		
 	}
 	
+	@GetMapping("/retrieve")
+	public ResponseEntity<?> retrieveByName(@RequestParam String nombre) {
+		try {
+			Optional<Producto> pro = service.findByNombre(nombre);
+			if(pro.isEmpty()) {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrada");
+			}
+			return ResponseEntity.ok(pro);
+		}
+		catch(Exception ex) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
+		}		
+	}
+	
 	//Update
 	@PutMapping("/update/{id}")
 	public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Producto pro) {
@@ -77,7 +93,7 @@ public class ProductoController {
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ERROR --PRODUCTO-- NO ENCONTRADO");
 			}
 			service.delete(id);
-			return ResponseEntity.ok(pro);
+			return ResponseEntity.ok("Producto Eliminado");
 		}
 		catch(Exception ex) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());

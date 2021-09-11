@@ -1,5 +1,5 @@
 function retrieve(id){
-        
+    $("#txtIdProducto").val(id);//esta es la propia
     $.ajax({        
         type: "GET", //Verbo de HTTP a utilizar
         url: "http://localhost:8080/producto/retrieve/" + id, //Dirección para realizar la petición HTTP        
@@ -24,16 +24,16 @@ function retrieve(id){
 }
 
 function show(list){ 
-    $("#tblproductoes").empty(); //Eliminar el contenido del tbody de la tabla
+    $("#tblProductos").empty(); //Eliminar el contenido del tbody de la tabla
     list.forEach(producto => {        
-        $("#tblproductoes").append('<tr>'            
+        $("#tblProductos").append('<tr>'            
             + '<td>' + producto.nombre +'</td>'
             + '<td>' + producto.codigo +'</td>'
             + '<td>' + producto.descripcion +'</td>'
             + '<td>' + producto.precio +'</td>'            
             //Boton de consultar
             + '<td>'
-            + '<button onclick="retrieve('+ producto.idProducto +')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdproducto">Consultar</button>'
+            + '<button onclick="retrieve('+ producto.idProducto +')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdProductos">Consultar</button>'
             + '</td>'                        
         +'</tr>');
     });
@@ -66,11 +66,14 @@ function list(){
 }
 
 function del(){
-    let id = $("#txtIdproducto").val();
+    let id = $("#txtIdProducto").val();
+    console.log("hola",id);
     $.ajax({        
         type: "DELETE", //Verbo de HTTP a utilizar
-        url: "http://localhost:8080/producto/delete/" + id, //Dirección para realizar la petición HTTP        
-        contentType : "application/json",        
+        url: "http://localhost:8080/producto/delete/"+id , //Dirección para realizar la petición HTTP   
+
+        contentType : "application/json",   
+        crossDomain: true,     
         success : function(response){
             console.log(response);                            
 		},

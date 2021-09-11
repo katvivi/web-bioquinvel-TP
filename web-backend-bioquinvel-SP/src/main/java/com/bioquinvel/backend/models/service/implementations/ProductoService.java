@@ -13,10 +13,10 @@ import com.bioquinvel.backend.models.service.interfaces.IProductoService;
 
 @Service
 public class ProductoService implements IProductoService {
-	
-	@Autowired	
-	IProducto repository; 
-		
+
+	@Autowired
+	IProducto repository;
+
 	@Override
 	@Transactional
 	public void save(Producto producto) {
@@ -24,20 +24,27 @@ public class ProductoService implements IProductoService {
 	}
 
 	@Override
-	@Transactional(readOnly=true)
-	public Optional<Producto> findById(Integer id) {		
+	@Transactional(readOnly = true)
+	public Optional<Producto> findById(Integer id) {
 		return repository.findById(id);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Optional<Producto> findByNombre(String nombre) {
+		return repository.findByNombre(nombre);
+
 	}
 
 	@Override
 	@Transactional
 	public void delete(Integer id) {
-		repository.deleteById(id);				
+		repository.deleteById(id);
 	}
 
 	@Override
-	@Transactional(readOnly=true)
-	public List<Producto> findAll() {		
+	@Transactional(readOnly = true)
+	public List<Producto> findAll() {
 		return (List<Producto>) repository.findAll();
 	}
 }
