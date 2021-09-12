@@ -21,7 +21,7 @@ public class Cliente extends Persona  implements Serializable {
 	private Integer idcliente;
 	
 	@Column(name="codigo_Cliente")
-	private int codigoCliente;
+	private String codigoCliente;
 
 	@Column(name="ciudad")
 	private String ciudad;
@@ -49,11 +49,12 @@ public class Cliente extends Persona  implements Serializable {
 		this.idcliente = idcliente;
 	}
 
-	public int getCodigoCliente() {
+	
+	public String getCodigoCliente() {
 		return codigoCliente;
 	}
 
-	public void setCodigoCliente(int codigoCliente) {
+	public void setCodigoCliente(String codigoCliente) {
 		this.codigoCliente = codigoCliente;
 	}
 

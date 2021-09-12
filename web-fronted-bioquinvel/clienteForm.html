@@ -21,40 +21,65 @@
   
       <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
-          <img width="95%" src="image/img3.jpg" srcset="" alt="Administradores">
+          <img width="95%" src="image/img3.jpg" srcset="" alt="Cliente">
         </div>
         <div class="col-md-7 col-lg-8">
-          <h4 class="mb-3">Registro de Cliente</h4>
+          <h4 class="mb-3">Datos del Cliente</h4>
           <hr class="my-4">
-          <form action="administradorList.html" id="frmAdministrador" class="needs-validation" novalidate  method="GET">
-            <div class="row g-3">              
+          <form method="POST" action="clienteList.html" id="frmCliente" class="needs-validation" novalidate>
+            <input type="hidden" id="txtIdCliente">
 
-                <div class="col-sm-6">
-                    <label for="txtCodigoCliente" class="form-label">Código:</label>
-                    <input type="text" class="form-control" id="txtCodigoCliente" placeholder="Ingrese su código de Cliente" value="" required>    
-                </div>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="txtCodigoCliente" class="form-label">Código:</label>
+                <input type="text" class="form-control" id="txtCodigoCliente" placeholder="Código Cliente" value="" required>    
+              </div>
   
-                <div class="col-sm-6">
-                    <label for="txtCedulaCliente" class="form-label">Cédula:</label>
-                    <input type="text" class="form-control" id="txtCedulaCliente" placeholder="Ingrese su numero de cedula">                
-                </div>
+              <div class="col-sm-6">
+                <label for="txtCedulaCliente" class="form-label">Cédula:</label>
+                <input type="text" class="form-control" id="txtCedulaCliente" placeholder="Número de cédula">                
+              </div>
               
-                <div class="col-sm-6">
-				    <label for="txtNombreAdmin" class="form-label">Nombre: </label>
-					<input type="text" class="form-control" id="txtNombreAdmin" placeholder="Ingrese su nombre" />
-	     		</div>
+              <div class="col-sm-6">
+								<label for="txtNombreCliente" class="form-label">Nombre: </label>
+								<input type="text" class="form-control" id="txtNombreCliente" placeholder="Ingrese su nombre" />
+							</div>
 
-				<div class="col-sm-6">
-					<label for="txtTelefonoAdmin">Teléfono:</label>
-					<input type="text" class="form-control" id="txtTelefonoAdmin" placeholder="Ingrese su numero de telefono" />
-				</div>
+							<div class="col-sm-6">
+								<label for="txtTelefonoCliente">Teléfono:</label>
+								<input type="text" class="form-control" id="txtTelefonoCliente" placeholder="Número de teléfono" />
+							</div>
 
-				<div class="col-sm-6">
-					<label for="txtEmailAdmin">Email</label>
-					<input type="email" class="form-control" id="txtEmailAdmin" placeholder="Ingrese su email" />
-                </div>
+							<div class="col-sm-6">
+								<label for="txtEmailCliente">Email:</label>
+								<input type="email" class="form-control" id="txtEmailCliente" placeholder="Ingrese su email" />
+              </div>
 
-            </div>         
+              <h4 class="mb-3">Registro Dirección</h4>
+              <hr class="my-4">
+
+              <div class="col-sm-6">
+								<label for="txtCiudadCliente">Ciudad:</label>
+                <select id="txtCiudadCliente" class="form-select">
+                  <option value="0">-- Seleccionar --</option>
+                  <option value="Quito">Quito</option>
+                  <option value="Ambato">Ambato</option>
+                  <option value="Latacunga">Latacunga</option>
+                  <option value="Cuenca">Cuenca</option>
+                </select>
+              </div>
+
+              <div class="col-sm-6">
+								<label for="txtDireccionCliente">Direccion:</label>
+								<input type="text" class="form-control" id="txtDireccionCliente"  />
+              </div>
+
+              <div class="col-sm-6">
+								<label for="txtPostalCliente">Codigo Postal:</label>
+								<input type="text" class="form-control" id="txtPostalCliente"  />
+              </div>
+
+            </div>
             <hr class="my-4">       
             <button type="submit" class="w-100 btn btn-success btn-lg">Guardar</button>
           </form>
@@ -67,6 +92,6 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/form-validation.js"></script>        
     <script src="js/main.js"></script> 
-    <script src="js/script-invernadero-form.js"></script> 
+    <script src="js/clienteForm.js"></script> 
 </body>
 </html>

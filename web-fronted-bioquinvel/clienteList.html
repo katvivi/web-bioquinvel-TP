@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Clientes</title>
+    <title>Lista de Clientes </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>    
 </head>
@@ -24,19 +24,19 @@
                 <th scope="col">Código</th>
                 <th scope="col">Cédula</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Teléfono</th>   
-                <th scope="col">Email</th>              
+                <th scope="col">Teléfono</th>    
+                <th scope="col">Email</th>           
                 <th scope="col">
                   <a href="clienteForm.html" class="btn btn-success">Nueva</a>
                 </th>                            
               </tr>
             </thead>
-            <tbody id="tblCliente">
+            <tbody id="tblClientes">
             </tbody>                        
           </table>
 
-        <!-- Modal Variedad-->
-        <div class="modal fade" id="mdProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <!-- Modal Asministrador-->
+        <div class="modal fade" id="mdCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -44,21 +44,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">               
-                    <label></label>
-                    <span id="spColor1"></span><br>
-                    <label>Color 2:</label>
-                    <span id="spColor2"></span><br>
-                    <label>Días en florero:</label>
-                    <span id="spDiasFlorero"></span><br>
-                    <label>Número de pétalos:</label>
-                    <span id="spNumeroPetalos"></span><br>
-                    <label>Tamaño del botón:</label>
-                    <span id="spTamanoBoton"></span><br>
-                    <label>Longitud mínima:</label>
-                    <span id="spLongitudMin"></span><br>
-                    <label>Longitud máxima:</label>
-                    <span id="spLongitudMax"></span><br>                    
-                    <input class="form-control" type="hidden" id="txtIdVariedad"> <!-- Es un control que contiene el valor del ID de la variedad consultada -->                    
+                    <label>Código:</label>
+                    <span id="spCodigo"></span><br>
+                    <label>Cédula:</label>
+                    <span id="spCedula"></span><br>
+                    <label>Nombre:</label>
+                    <span id="spNombre"></span><br>
+                    <label>Teléfono:</label>
+                    <span id="spTelefono"></span><br>   
+                    <label>Email:</label>
+                    <span id="spEmail"></span><br>   
+                    
+                    <input class="form-control" type="hidden" id="txtIdCliente">          
               </div>
               <div class="modal-footer">
                 <button id="btnEliminar" type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
@@ -67,13 +64,12 @@
             </div>
           </div>
         </div>
-
         </section>      
     </main>
     <footer></footer>
     <!-- Vincula jQuery con el index.html -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/script-variedad-list.js"></script>
+    <script src="js/clienteList.js"></script>
 </body>
 </html>

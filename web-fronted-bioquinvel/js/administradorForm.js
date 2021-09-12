@@ -4,7 +4,7 @@ function set(administrador){
     $("#txtNombreAdmin").val(administrador.nombre);
     $("#txtTelefonoAdmin").val(administrador.telefono);
     $("#txtEmailAdmin").val(administrador.email);
-    $("#txtIdAdministrador").val(producto.idAdministrativo);
+    $("#txtIdAdministrador").val(administrador.idAdministrativo);
 }
 
 function serializeForm(){
