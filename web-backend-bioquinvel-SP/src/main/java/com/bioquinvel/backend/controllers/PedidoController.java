@@ -29,7 +29,7 @@ public class PedidoController {
 	public ResponseEntity<?> create(@RequestBody Pedido p) {
 		try {
 			service.save(p);
-			return ResponseEntity.status(HttpStatus.CREATED).body("El Pedido se creo correctamente");
+			return ResponseEntity.status(HttpStatus.CREATED).body(p);
 		}
 		catch(Exception ex) {
 			

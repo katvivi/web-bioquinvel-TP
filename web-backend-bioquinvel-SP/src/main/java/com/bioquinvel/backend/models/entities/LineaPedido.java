@@ -1,6 +1,8 @@
 package com.bioquinvel.backend.models.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -11,7 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,9 +40,12 @@ public class LineaPedido implements Serializable {
 	@JsonIgnore 
 	private Pedido pedido;//Representa la relacion
 	
-	@JoinColumn(name = "id_producto", nullable = false)
+	/*@JoinColumn(name = "id_producto", nullable = false)
 	@OneToOne(fetch = FetchType.LAZY)  
-	private Producto producto;
+	private Producto producto;*/
+	
+	@OneToMany(mappedBy="lineapedido", fetch = FetchType.LAZY)	
+	private List<Producto> productos;
 	
 	
 	public LineaPedido() {
@@ -74,14 +79,14 @@ public class LineaPedido implements Serializable {
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
 	}
-	public Producto getProducto() {
-		return producto;
+	public List<Producto> getProductos() {
+		if (productos == null) 
+			productos=new ArrayList<Producto>();
+		return productos;
 	}
-	public void setProducto(Producto producto) {
-		this.producto = producto;
+	public void setProductos(List<Producto> productos) {
+		this.productos = productos;
 	}
 	
-	
-	
-
+		
 }

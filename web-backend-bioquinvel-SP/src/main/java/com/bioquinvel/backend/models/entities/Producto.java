@@ -8,7 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -35,8 +36,12 @@ public class Producto implements Serializable {
 	@Column(name="precio")
 	private float precio;
 	
-	@OneToOne(mappedBy = "producto")
+	@JoinColumn(name="id_lineaPedido", referencedColumnName= "id_lineaPedido")
+	@ManyToOne
 	private LineaPedido lineapedido;
+	
+	/*@OneToOne(mappedBy = "producto")
+	private LineaPedido lineapedido;*/
 
 	public Producto() {
 		super();

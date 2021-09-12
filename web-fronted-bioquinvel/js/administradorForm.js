@@ -4,67 +4,17 @@ function set(administrador){
     $("#txtNombreAdmin").val(administrador.nombre);
     $("#txtTelefonoAdmin").val(administrador.telefono);
     $("#txtEmailAdmin").val(administrador.email);
-}
-
-function retrieve(){       
-    let txtBuscarProd = $("#txtBuscarProd").val();
-    if(txtBuscarProd === "") return;
-
-    let id = parseInt(txtBuscarProd); //Transforma el txtBuscar en un número entero
-    console.log(id);
-    if(isNaN(id)){
-        $.ajax({        
-            type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/administrador/retrieve?nombre="+ txtBuscarProd, //Dirección para realizar la petición HTTP        
-            contentType : "application/json",
-            dataType : "json",
-            success : function(response){
-                console.log(response);    
-                //El response contiene el objeto administrador consultado
-                set(response);                            
-		    },
-		    error : function(err){
-			    console.error(err);
-		    },
-            complete : function(xhr, textStatus){
-                if(xhr.status == 404)
-                {
-                    alert(xhr.responseText);                    
-                }
-            }
-        });
-    }
-    else{
-        $.ajax({        
-            type: "GET", //Verbo de HTTP a utilizar
-            url: "http://localhost:8080/administrador/retrieve/" + id, //Dirección para realizar la petición HTTP        
-            contentType : "application/json",
-            dataType : "json",
-            success : function(response){
-                console.log(response);    
-                //El response contiene el objeto administrador consultado
-                set(response);                            
-		    },
-		    error : function(err){
-			    console.error(err);
-		    },
-            complete : function(xhr, textStatus){
-                if(xhr.status == 404)
-                {
-                    alert(xhr.responseText);                    
-                }
-            }
-        });
-    }
+    $("#txtIdAdministrador").val(producto.idAdministrativo);
 }
 
 function serializeForm(){
     let administrador = {
-        "codigo" : $("#txtcodigoProd").val(),
-        "nombre" : $("#txtnombreProd").val(),
-        "descripcion" : $("#txtdescripcionProd").val(), 
-        "precio" : $("#txtprecioProd").val(),  
-        "idadministrador" : $("#txtIdadministrador").val()
+        "codigoAdmin" : $("#txtCodigoAdmin").val(),
+        "cedula" : $("#txtCedulaAdmin").val(),
+        "nombre" : $("#txtNombreAdmin").val(), 
+        "telefono" : $("#txtTelefonoAdmin").val(),  
+        "email" : $("#txtEmailAdmin").val(),
+        "idAdministrativo" : $("#txtIdAdministrador").val()
     };
     return administrador;
 }
@@ -76,7 +26,7 @@ function save(){
     var requestBody = JSON.stringify(administrador);
     console.log(requestBody);
     //Utilizar jQuery AJAX para enviar al Backend
-    if(administrador.idadministrador == 0){
+    if(administrador.idAdministrativo == 0){
         $.ajax({        
             type: "POST", //Verbo de HTTP a utilizar
             url: "http://localhost:8080/administrador/create", //Dirección para realizar la petición HTTP
@@ -91,10 +41,11 @@ function save(){
 			    console.error(err);
 		    }            
         });
+        
     }
     else{
         //Update
-        let id = administrador.idadministrador;
+        let id = administrador.idAdministrativo;
         $.ajax({        
             type: "PUT", //Verbo de HTTP a utilizar
             url: "http://localhost:8080/administrador/update/" + id, //Dirección para realizar la petición HTTP
@@ -114,17 +65,12 @@ function save(){
 
 $(function() {       
 
-    $('#frmadministrador').on('submit', function() {
-        var form = document.getElementById('frmadministrador');
+    $('#frmAdministrador').on('submit', function() {
+        var form = document.getElementById('frmAdministrador');
         var a = form.checkValidity();
         console.log(a);
         if(a){
             save();
         }
-    });
-
-
-    $("#btnBuscar").click(function(){        
-        retrieve();
-    });    
+    });   
 });

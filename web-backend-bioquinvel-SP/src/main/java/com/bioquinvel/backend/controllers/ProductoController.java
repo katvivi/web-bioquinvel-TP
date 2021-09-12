@@ -106,7 +106,7 @@ public class ProductoController {
 		try {
 			List<Producto> pro = service.findAll();
 			if(pro.isEmpty()) {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ERROR --PRODUCTO-- NO ENCONTRADO");
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ERROR -- PRODUCTO -- NO ENCONTRADO");
 			}
 			return ResponseEntity.ok(pro);
 		}

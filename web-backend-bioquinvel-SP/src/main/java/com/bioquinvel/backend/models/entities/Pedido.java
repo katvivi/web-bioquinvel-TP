@@ -1,6 +1,7 @@
 package com.bioquinvel.backend.models.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -45,7 +46,6 @@ public class Pedido implements Serializable {
 	
 	//mappedBy va el nombre del atributo de esta clase [pedido] en la clase asociada [LineaPedido]
 	@OneToMany(mappedBy="pedido", fetch = FetchType.LAZY)	
-	 
 	private List<LineaPedido> lineaPedidos;
 	
 	public Pedido() {
@@ -106,7 +106,10 @@ public class Pedido implements Serializable {
 	}
 
 	public List<LineaPedido> getLineaPedidos() {
+		if (lineaPedidos == null) 
+			lineaPedidos=new ArrayList<LineaPedido>();
 		return lineaPedidos;
+		
 	}
 
 	public void setLineaPedidos(List<LineaPedido> lineaPedidos) {

@@ -26,17 +26,18 @@
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">Registro de Administrador</h4>
           <hr class="my-4">
-          <form action="administradorList.html" id="frmAdministrador" class="needs-validation" novalidate  method="GET">
-            <div class="row g-3">              
+          <form method="POST" action="administradorList.html" id="frmAdministrador" class="needs-validation" novalidate>
+            <input type="hidden" id="txtIdAdministrador">
 
-              <div class="col-sm-6">
+            <div class="row g-3">
+              <div class="col-12">
                 <label for="txtCodigoAdmin" class="form-label">Código:</label>
                 <input type="text" class="form-control" id="txtCodigoAdmin" placeholder="Código Administrativo" value="" required>    
               </div>
   
               <div class="col-sm-6">
                 <label for="txtCedulaAdmin" class="form-label">Cédula:</label>
-                <input type="text" class="form-control" id="txtAltura" placeholder="Número de cédula">                
+                <input type="text" class="form-control" id="txtCedulaAdmin" placeholder="Número de cédula">                
               </div>
               
               <div class="col-sm-6">
@@ -54,7 +55,9 @@
 								<input type="email" class="form-control" id="txtEmailAdmin" placeholder="Ingrese su email" />
               </div>
 
-            </div>         1
+            </div>
+              
+
             <hr class="my-4">       
             <button type="submit" class="w-100 btn btn-success btn-lg">Guardar</button>
           </form>

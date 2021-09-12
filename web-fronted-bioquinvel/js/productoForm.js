@@ -113,7 +113,6 @@ function save(){
 }
 
 $(function() {       
-
     $('#frmProducto').on('submit', function() {
         var form = document.getElementById('frmProducto');
         var a = form.checkValidity();

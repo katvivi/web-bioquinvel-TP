@@ -23,7 +23,7 @@ public class Administrativo extends Persona implements Serializable{
 	private Integer idAdministrativo;
 	
 	@Column(name="codigo_Admin")
-	private int codigoAdmin;
+	private String codigoAdmin;
 	
 	public Administrativo() {
 		super();
@@ -42,13 +42,12 @@ public class Administrativo extends Persona implements Serializable{
 		this.idAdministrativo = idAdministrativo;
 	}
 
-	public int getCodigoAdmin() {
+	public String getCodigoAdmin() {
 		return codigoAdmin;
 	}
 
-	public void setCodigoAdmin(int codigoAdmin) {
+	public void setCodigoAdmin(String codigoAdmin) {
 		this.codigoAdmin = codigoAdmin;
-	}
-	
+	}	
 	
 }
