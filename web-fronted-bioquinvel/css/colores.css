@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.Circulo-de-Empresarios-1-hex { color: #032059; }
+.Circulo-de-Empresarios-2-hex { color: #011C40; }
+.Circulo-de-Empresarios-3-hex { color: #F2E205; }
+.Circulo-de-Empresarios-4-hex { color: #F2CB05; }
+.Circulo-de-Empresarios-5-hex { color: #F2F2F2; }
+
+/* Color Theme Swatches in RGBA */
+.Circulo-de-Empresarios-1-rgba { color: rgba(2, 31, 89, 1); }
+.Circulo-de-Empresarios-2-rgba { color: rgba(1, 28, 63, 1); }
+.Circulo-de-Empresarios-3-rgba { color: rgba(242, 226, 4, 1); }
+.Circulo-de-Empresarios-4-rgba { color: rgba(242, 202, 4, 1); }
+.Circulo-de-Empresarios-5-rgba { color: rgba(242, 242, 242, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Circulo-de-Empresarios-1-hsla { color: hsla(219, 94, 18, 1); }
+.Circulo-de-Empresarios-2-hsla { color: hsla(213, 96, 12, 1); }
+.Circulo-de-Empresarios-3-hsla { color: hsla(56, 96, 48, 1); }
+.Circulo-de-Empresarios-4-hsla { color: hsla(50, 96, 48, 1); }
+.Circulo-de-Empresarios-5-hsla { color: hsla(0, 0, 95, 1); }
