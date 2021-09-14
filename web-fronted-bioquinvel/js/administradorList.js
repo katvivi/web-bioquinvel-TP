@@ -51,6 +51,7 @@ function list(){
         success : function(response){
             console.log(response);
             //response trae la lista de administradores como un Arreglo JSON
+            console.log("Lista de administradores");
             show(response);
 		},
 		error : function(err){
@@ -69,7 +70,6 @@ function list(){
 
 function del(){
     let id = $("#txtIdAdministrador").val();
-    console.log("hola",id);
     $.ajax({        
         type: "DELETE", //Verbo de HTTP a utilizar
         url: "http://localhost:8080/administrador/delete/"+id , //Dirección para realizar la petición HTTP   

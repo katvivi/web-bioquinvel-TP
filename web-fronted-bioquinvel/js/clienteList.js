@@ -42,6 +42,7 @@ function show(list){
 }
 
 function list(){
+    console.log("Lista de Clientes");
     //Utilizar jQuery AJAX para enviar al Backend
     $.ajax({        
         type: "GET", //Verbo de HTTP a utilizar
