@@ -2,6 +2,7 @@ function set(producto){
     $("#txtcodigoProd").val(producto.codigo);
     $("#txtnombreProd").val(producto.nombre);
     $("#txtdescripcionProd").val(producto.descripcion);
+    $("#txtstockProd").val(producto.cantidad);
     $("#txtprecioProd").val(producto.precio);
     $("#txtIdProducto").val(producto.idProducto);
 }
@@ -63,6 +64,7 @@ function serializeForm(){
         "codigo" : $("#txtcodigoProd").val(),
         "nombre" : $("#txtnombreProd").val(),
         "descripcion" : $("#txtdescripcionProd").val(), 
+        "cantidad" : $("#txtstockProd").val(),
         "precio" : $("#txtprecioProd").val(),  
         "idProducto" : $("#txtIdProducto").val()
     };

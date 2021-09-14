@@ -13,6 +13,7 @@ function retrieve(id){
             $("#spCodigo").html(producto.codigo);
             $("#spNombre").html(producto.nombre);
             $("#spDescripcion").html(producto.descripcion);
+            $("#spStock").html(producto.cantidad);
             $("#spPrecio").html(producto.precio);
             //Setter
             //let valor = $("#txtIdproducto").val(); //Getter
@@ -24,13 +25,16 @@ function retrieve(id){
 }
 
 function show(list){ 
+    console.log("Tabla lista")
     $("#tblProductos").empty(); //Eliminar el contenido del tbody de la tabla
     list.forEach(producto => {        
         $("#tblProductos").append('<tr>'            
             + '<td>' + producto.nombre +'</td>'
             + '<td>' + producto.codigo +'</td>'
             + '<td>' + producto.descripcion +'</td>'
-            + '<td>' + producto.precio +'</td>'            
+            + '<td>' + producto.cantidad +'</td>'  
+            + '<td>' + producto.precio +'</td>'  
+
             //Boton de consultar
             + '<td>'
             + '<button onclick="retrieve('+ producto.idProducto +')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdProductos">Consultar</button>'
