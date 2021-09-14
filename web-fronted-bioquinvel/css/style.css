@@ -1,0 +1,17 @@
+
+body{
+    background: #ffe259;
+    background: -webkit-linear-gradient(to right, #ffa751, #ffe259);  
+    background: linear-gradient(to right, #ffa751, #ffe259); 
+}
+.bg{
+    background-image: url(https://image.freepik.com/foto-gratis/vista-frontal-concepto-ciencia-frasco_23-2148623715.jpg);
+    background-position: center center;
+}        
+  
+.nav{
+    background: white;
+}
+.a{
+    background: #F2CB05;
+}
