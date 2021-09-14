@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bioquinvel.backend.models.entities.LineaPedido;
 import com.bioquinvel.backend.models.entities.Pedido;
-import com.bioquinvel.backend.models.repositories.ILineaPedido;
+import com.bioquinvel.backend.models.entities.Producto;
 import com.bioquinvel.backend.models.repositories.IPedido;
+import com.bioquinvel.backend.models.repositories.IProducto;
 import com.bioquinvel.backend.models.service.interfaces.IPedidoService;
 
 @Service
@@ -20,16 +20,15 @@ public class PedidoService implements IPedidoService{
 	IPedido repository; 
 	
 	@Autowired	
-	ILineaPedido repositoryLineaPedido; 
+	IProducto repositoryProducto; 
 	
 	@Override
 	@Transactional
 	public void save(Pedido pedidoSave) {
 		repository.save(pedidoSave);
-		
-		for (LineaPedido li : pedidoSave.getLineaPedidos() ) {
+		for (Producto li : pedidoSave.getProducto()){
 			li.setPedido(pedidoSave);//Relaciona el Pedido a linea de pedido [con su PK] 
-			repositoryLineaPedido.save(li);
+			repositoryProducto.save(li);
 		}
 	}
 

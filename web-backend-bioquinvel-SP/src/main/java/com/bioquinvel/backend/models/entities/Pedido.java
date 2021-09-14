@@ -46,7 +46,7 @@ public class Pedido implements Serializable {
 	
 	//mappedBy va el nombre del atributo de esta clase [pedido] en la clase asociada [LineaPedido]
 	@OneToMany(mappedBy="pedido", fetch = FetchType.LAZY)	
-	private List<LineaPedido> lineaPedidos;
+	private List<Producto> producto;
 	
 	public Pedido() {
 		super();
@@ -105,16 +105,15 @@ public class Pedido implements Serializable {
 		this.recargo = recargo;
 	}
 
-	public List<LineaPedido> getLineaPedidos() {
-		if (lineaPedidos == null) 
-			lineaPedidos=new ArrayList<LineaPedido>();
-		return lineaPedidos;
-		
+	public List<Producto> getProducto() {
+		if (producto == null) 
+			producto=new ArrayList<Producto>();
+	
+		return producto;
 	}
 
-	public void setLineaPedidos(List<LineaPedido> lineaPedidos) {
-		this.lineaPedidos = lineaPedidos;
+	public void setProducto(List<Producto> producto) {
+		this.producto = producto;
 	}
-
 	
 }
