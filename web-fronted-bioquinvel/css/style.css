@@ -15,3 +15,20 @@ body{
 .a{
     background: #F2CB05;
 }
+
+.btnB{
+    background-color:#F2CB05 ;
+    color: white;
+}
+
+.div{
+    background: white;
+}
+
+footer{
+    background: #011C40;
+    color: white;
+    clear: both;
+    padding: 20px 0px;
+    text-align: center;
+}
