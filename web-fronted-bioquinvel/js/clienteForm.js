@@ -1,18 +1,17 @@
 function set(cliente){
-    $("#txtCodigoCliente").val(cliente.codigoCliente);
     $("#txtCedulaCliente").val(cliente.cedula);
     $("#txtNombreCliente").val(cliente.nombre);
     $("#txtTelefonoCliente").val(cliente.telefono);
-    $("#txtEmailCliente").val(cliente.email);
+    $("#txtEmailCliente").val(cliente.emailCliente);
     $("#txtCiudadCliente").val(cliente.ciudad);
     $("#txtDireccionCliente").val(cliente.direccionCliente);
     $("#txtPostalCliente").val(cliente.codigoPostal);
+    $("#txtContCliente").val(cliente.claveCliente);
     $("#txtIdCliente").val(cliente.idcliente);
 }
 
 function serializeForm(){
     let cliente = {
-        "codigoCliente" : $("#txtCodigoCliente").val(),
         "cedula" : $("#txtCedulaCliente").val(),
         "nombre" : $("#txtNombreCliente").val(), 
         "telefono" : $("#txtTelefonoCliente").val(),  
@@ -20,6 +19,7 @@ function serializeForm(){
         "ciudad" : $("#txtCiudadCliente").val(),
         "direccionCliente" : $("#txtDireccionCliente").val(),
         "codigoPostal" : $("#txtPostalCliente").val(),
+        "claveCliente" : $("#txtContCliente").val(),
         "idcliente" : $("#txtIdCliente").val()
     };
     return cliente;

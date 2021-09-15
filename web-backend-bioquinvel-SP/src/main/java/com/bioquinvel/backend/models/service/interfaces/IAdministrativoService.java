@@ -11,5 +11,5 @@ public interface IAdministrativoService {
 	public Optional<Administrativo> findById(Integer id);
 	public void delete(Integer id);
 	public List<Administrativo> findAll();
-
+	public Administrativo findByemail_admin(String u);
 }

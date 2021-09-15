@@ -40,4 +40,10 @@ public class AdministrativoService implements IAdministrativoService {
 	public List<Administrativo> findAll() {		
 		return (List<Administrativo>) repository.findAll();
 	}
+	
+	@Override
+	public Administrativo findByemail_admin(String u) {
+		// TODO Auto-generated method stub	
+		return repository.findByemail_admin(u);
+	}
 }

@@ -26,19 +26,16 @@
                 -->
                 <form action="">
                     <div class="mb-4">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" name="email">
+                        <label for="txtUsuario" class="form-label">Correo electronico:</label>
+                        <input type="text" class="form-control" id="txtUsuario" name="email">
                     </div>
                     <div class="mb-4">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" name="password">
+                        <label for="txtPassword" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="txtPassword" name="txtPassword">
                     </div>
-                    <div class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input" name="connected">
-                        <label class="form-check-label" for="connected">Mantenerme conectado</label>
-                    </div>
+                    
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        <a class="btn btn-primary" onclick="login()">Iniciar sesión</a>
                     </div>
                     <div class="my-3">
                         <span><a href="registro.html">Crear cuenta nueva</a></span>
@@ -47,5 +44,8 @@
             </div>
         </div>
     </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script> 
+    <script src="js/login.js"></script>
 </body>
 </html>

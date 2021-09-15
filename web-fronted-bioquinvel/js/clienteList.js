@@ -10,11 +10,11 @@ function retrieve(id){
             //La response contiene el objeto de tipo cliente
             let cliente = response;            
             $("#tblClientes").html(cliente.nombre);
-            $("#spCodigo").html(cliente.codigoCliente);
             $("#spCedula").html(cliente.cedula);
             $("#spNombre").html(cliente.nombre);
             $("#spTelefono").html(cliente.telefono);
-            $("#spEmail").html(cliente.email);
+            $("#spEmail").html(cliente.emailCliente);
+            $("#spPasword").html(cliente.claveCliente);
             //Setter
             //let valor = $("#txtIdCliente").val(); //Getter
 		},
@@ -27,12 +27,12 @@ function retrieve(id){
 function show(list){ 
     $("#tblClientes").empty(); //Eliminar el contenido del tbody de la tabla
     list.forEach(cliente => {        
-        $("#tblClientes").append('<tr>'            
-            + '<td>' + cliente.codigoCliente +'</td>'
+        $("#tblClientes").append('<tr>'     
             + '<td>' + cliente.cedula +'</td>'
             + '<td>' + cliente.nombre +'</td>'
             + '<td>' + cliente.telefono +'</td>'  
-            + '<td>' + cliente.email +'</td>'           
+            + '<td>' + cliente.emailCliente +'</td>'   
+            + '<td>' + cliente.claveCliente +'</td>'          
             //Boton de consultar
             + '<td>'
             + '<button onclick="retrieve('+ cliente.idcliente +')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdCliente">Consultar</button>'
@@ -49,7 +49,9 @@ function list(){
         url: "http://localhost:8080/cliente/list", //Dirección para realizar la petición HTTP        
         contentType : "application/json",
         dataType : "json",
+        
         success : function(response){
+            console.log("Completado");
             console.log(response);
             //response trae la lista de clientees como un Arreglo JSON
             show(response);

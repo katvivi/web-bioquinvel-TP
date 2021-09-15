@@ -1,19 +1,19 @@
 function set(administrador){
-    $("#txtCodigoAdmin").val(administrador.codigoAdmin);
     $("#txtCedulaAdmin").val(administrador.cedula);
     $("#txtNombreAdmin").val(administrador.nombre);
     $("#txtTelefonoAdmin").val(administrador.telefono);
-    $("#txtEmailAdmin").val(administrador.email);
+    $("#txtPasword").val(administrador.claveAdministrativo);
+    $("#txtEmailAdmin").val(administrador.emailAdmin);
     $("#txtIdAdministrador").val(administrador.idAdministrativo);
 }
 
 function serializeForm(){
     let administrador = {
-        "codigoAdmin" : $("#txtCodigoAdmin").val(),
         "cedula" : $("#txtCedulaAdmin").val(),
         "nombre" : $("#txtNombreAdmin").val(), 
         "telefono" : $("#txtTelefonoAdmin").val(),  
-        "email" : $("#txtEmailAdmin").val(),
+        "emailAdmin" : $("#txtEmailAdmin").val(),
+        "claveAdministrativo" : $("#txtPasword").val(),
         "idAdministrativo" : $("#txtIdAdministrador").val()
     };
     return administrador;

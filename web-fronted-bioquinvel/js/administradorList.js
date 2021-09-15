@@ -10,11 +10,11 @@ function retrieve(id){
             //La response contiene el objeto de tipo administrador
             let administrador = response;            
             $("#tblAdministradores").html(administrador.nombre);
-            $("#spCodigo").html(administrador.codigoAdmin);
             $("#spCedula").html(administrador.cedula);
             $("#spNombre").html(administrador.nombre);
             $("#spTelefono").html(administrador.telefono);
-            $("#spEmail").html(administrador.email);
+            $("#spPasword").html(administrador.claveAdministrativo);
+            $("#spEmail").html(administrador.emailAdmin);
             //Setter
             //let valor = $("#txtIdadministrador").val(); //Getter
 		},
@@ -26,13 +26,14 @@ function retrieve(id){
 
 function show(list){ 
     $("#tblAdministradores").empty(); //Eliminar el contenido del tbody de la tabla
-    list.forEach(administrador => {        
-        $("#tblAdministradores").append('<tr>'            
-            + '<td>' + administrador.codigoAdmin +'</td>'
+    list.forEach(administrador => {
+        console.log(administrador);       
+        $("#tblAdministradores").append('<tr>'          
             + '<td>' + administrador.cedula +'</td>'
             + '<td>' + administrador.nombre +'</td>'
-            + '<td>' + administrador.telefono +'</td>'  
-            + '<td>' + administrador.email +'</td>'           
+            + '<td>' + administrador.telefono +'</td>'
+            + '<td>' + administrador.claveAdministrativo +'</td>'  
+            + '<td>' + administrador.emailAdmin +'</td>'  
             //Boton de consultar
             + '<td>'
             + '<button onclick="retrieve('+ administrador.idAdministrativo +')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdAdministrador">Consultar</button>'
@@ -42,6 +43,7 @@ function show(list){
 }
 
 function list(){
+    console.log("Lista");
     //Utilizar jQuery AJAX para enviar al Backend
     $.ajax({        
         type: "GET", //Verbo de HTTP a utilizar

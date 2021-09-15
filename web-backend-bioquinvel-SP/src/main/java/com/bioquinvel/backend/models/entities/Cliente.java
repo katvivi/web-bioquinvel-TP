@@ -20,8 +20,11 @@ public class Cliente extends Persona  implements Serializable {
 	@Column(name="id_cliente")
 	private Integer idcliente;
 	
-	@Column(name="codigo_Cliente")
-	private String codigoCliente;
+	@Column(name="email_Cliente")
+	private String emailCliente;
+	
+	@Column(name="clave_cliente")
+	private String claveCliente;
 
 	@Column(name="ciudad")
 	private String ciudad;
@@ -49,15 +52,6 @@ public class Cliente extends Persona  implements Serializable {
 		this.idcliente = idcliente;
 	}
 
-	
-	public String getCodigoCliente() {
-		return codigoCliente;
-	}
-
-	public void setCodigoCliente(String codigoCliente) {
-		this.codigoCliente = codigoCliente;
-	}
-
 	public String getCiudad() {
 		return ciudad;
 	}
@@ -80,7 +74,21 @@ public class Cliente extends Persona  implements Serializable {
 
 	public void setCodigoPostal(String codigoPostal) {
 		this.codigoPostal = codigoPostal;
+	}
+
+	public String getClaveCliente() {
+		return claveCliente;
+	}
+
+	public void setClaveCliente(String claveCliente) {
+		this.claveCliente = claveCliente;
+	}
+
+	public String getEmailCliente() {
+		return emailCliente;
+	}
+
+	public void setEmailCliente(String emailCliente) {
+		this.emailCliente = emailCliente;
 	}	
-	
-	
 }

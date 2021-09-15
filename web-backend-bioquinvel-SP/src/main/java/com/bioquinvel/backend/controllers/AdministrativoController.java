@@ -28,7 +28,6 @@ public class AdministrativoController {
 	IAdministrativoService service;
 	
 	@PostMapping("/create")
-	
 	public ResponseEntity<?> create(@RequestBody Administrativo a) {
 		try {
 			service.save(a);
@@ -99,5 +98,24 @@ public class AdministrativoController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
 		}
 	}
-
+	
+	//Login
+	@PostMapping("/login")
+	public ResponseEntity<?> Login(@RequestBody Administrativo a){
+		try {
+			Administrativo u = service.findByemail_admin(a.getEmailAdmin());
+			
+			if(u == null) {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario que ingresó, no coincide con nuestros registros.");		
+			}
+			if(u.getClaveAdministrativo().equals(a.getClaveAdministrativo())) {
+				return ResponseEntity.status(HttpStatus.OK).body("Bienvenido de nuevo a Bioquínvel");		
+			}
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("La contraseña que ingresó, no coincide con nuestros registros.");
+			
+		}catch(Exception ex) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
+		}
+	}
+	
 }
