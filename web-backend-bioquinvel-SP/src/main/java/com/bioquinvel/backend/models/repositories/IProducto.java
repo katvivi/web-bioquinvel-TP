@@ -8,4 +8,5 @@ import com.bioquinvel.backend.models.entities.Producto;
 
 public interface IProducto extends CrudRepository<Producto, Integer>{
 	public Optional<Producto> findByNombre(String nombre);
+	public Optional<Producto> nombreContains(String nombre);
 }

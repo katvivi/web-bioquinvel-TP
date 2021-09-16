@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Administradores</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>    
+    
+    <!-- Menu principal -->
+   <header>     
+    <nav  class="navbar navbar-expand-lg navbar-light p-3 nav"  id="menu">
+       <div class="container">
+          <a class="navbar-brand" href="index.html">
+             <img src="image/logo-Bioquinvel_Mesa de trabajo 1.png" alt="" style="width:25%">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Administrador
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <li><a class="dropdown-item" href="#">Registro</a></li>
+                  <li><a class="dropdown-item" href="admin-List.html">Listado</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Producto
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="producto-Form.html">Registro</a></li>
+                <li><a class="dropdown-item" href="producto-List.html">Listado</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Detalles
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="adicional-Form.html">Registro</a></li>
+                <li><a class="dropdown-item" href="adicional-List.html">Listado</a></li>
+              </ul>
+            </div>
+            <a class="btn btnB" aria-expanded="false" href="cliente-List.html">Clientes</a>
+         </div>
+       </div>
+     </nav>                  
+ </header>
+ <!-- Fin del menu principal -->
+
+    <main class="container w-75 bg-light mt-4 rounded shadow">
+      <div class="py-5 text-center">        
+        <h2>Nuevo Administrador</h2>
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <img width="95%" src="image/producto6.jpg" srcset="" alt="Administradores">
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registro de Administrador</h4>
+          <hr class="my-4">
+          <form method="POST" action="admin-List.html" id="frmAdministrador" class="needs-validation" novalidate>
+            <input type="hidden" id="txtIdAdministrador">
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="txtCedulaAdmin" class="form-label">Cédula:</label>
+                <input type="text" class="form-control" id="txtCedulaAdmin" placeholder="Número de cédula" >                
+              </div>
+              
+              <div class="col-sm-6">
+								<label for="txtNombreAdmin" class="form-label">Nombre: </label>
+								<input type="text" class="form-control" id="txtNombreAdmin" placeholder="Ingrese su nombre" />
+							</div>
+
+							<div class="col-sm-6">
+								<label for="txtTelefonoAdmin">Teléfono:</label>
+								<input type="text" class="form-control" id="txtTelefonoAdmin" placeholder="Número de teléfono" />
+							</div>
+
+							<div class="col-sm-6">
+								<label for="txtEmailAdmin">Email:</label>
+								<input type="email" class="form-control" id="txtEmailAdmin" placeholder="Ingrese su email" />
+              </div>
+
+              <div class="col-sm-6">
+								<label for="txtPasword">Contraseña:</label>
+								<input type="password" class="form-control" id="txtPasword" placeholder="Ingrese su password" />
+              </div>
+
+            </div>  
+            <button type="submit" class="w-100 btn btn-success btn-lg">Guardar</button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+    
+    <br><br><br>
+    <footer>
+    </footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script>        
+    <script src="js/main.js"></script> 
+    <script src="js/admin-Form.js"></script> 
+</body>
+</html>

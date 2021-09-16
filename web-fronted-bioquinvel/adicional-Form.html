@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extras de Formulas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="css/style.css"></script>
+</head>
+<body>    
+ <!-- Menu principal -->
+ <header>     
+  <nav  class="navbar navbar-expand-lg navbar-light p-3 nav"  id="menu">
+     <div class="container">
+        <a class="navbar-brand" href="index.html">
+           <img src="image/logo-Bioquinvel_Mesa de trabajo 1.png" alt="" style="width:25%">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Administrador
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="admin-Form.html">Registro</a></li>
+                <li><a class="dropdown-item" href="producto-List.html">Listado</a></li>
+              </ul>
+          </div>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Producto
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <li><a class="dropdown-item" href="producto-Form.html">Registro</a></li>
+              <li><a class="dropdown-item" href="producto-List.html">Listado</a></li>
+            </ul>
+          </div>
+
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Detalle
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <li><a class="dropdown-item" href="#">Registro</a></li>
+              <li><a class="dropdown-item" href="adicional-List.html">Listado</a></li>
+            </ul>
+          </div>
+          <a class="btn btnB" aria-expanded="false" href="cliente-List.html">Clientes</a>
+       </div>
+     </div>
+   </nav>                  
+</header>
+<!-- Fin del menu principal -->
+    <main class="container w-75 bg-light mt-4 rounded shadow">
+      <div class="py-5 text-center">        
+        <h2>Adicionales de Formulas</h2>
+             
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <img width="95%" src="image/producto8.png" >
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <hr class="my-4">
+          <form action="adicional-List.html" id="frmAdicional" class="needs-validation" novalidate  method="GET">
+            <div class="row g-3">              
+              <div class="col-sm-6">
+                <label for="txtCodigo" class="form-label">Codigo:</label>
+                <input type="text" class="form-control" id="txtCodigo" >                
+              </div>
+
+
+              <div class="col-sm-6">
+                <label for="txtAroma" class="form-label">Aromas</label>
+                <select id="txtAroma" class="form-select">
+                    <option value="0">-- Seleccionar --</option>
+                    <option value="MoraAzul">Mora Azul</option>
+                    <option value="Limon">Limon</option>
+                    <option value="FrutosRojos">Frutos Rojos</option>
+                    <option value="FrutosRojos">Pasion Frutal</option>
+                    <option value="FrutosRojos">Lavanda</option>
+                  </select>                 
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="txtColorante" class="form-label">Colorantes  </label>
+                <select id="txtColorante" class="form-select">
+                    <option value="0">-- Seleccionar --</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Amarillo">Amarillo</option>
+                  </select>                
+              </div>
+              
+              <div class="col-sm-6">
+                <label for="txtVitamina" class="form-label">Vitaminas:</label>
+                <select id="txtVitamina" class="form-select">
+                    <option value="0">-- Seleccionar --</option>
+                    <option value="VitaminaE">Vitamina E</option>
+                    <option value="VitaminaE">Glicerina</option>
+                  </select>       
+              </div>
+
+              <div class="col-sm-12">                
+                <input type="text" class="form-control" id="txtDetalleFormula" required readonly>
+              </div>
+
+              <h5 class="mb-3">Detalles</h5>              
+              <table class="table">
+                <thead>
+                  <tr>                
+                    <th scope="col">Tipo:</th>
+                    <th scope="col">Descripcion:</th>                    
+                    <th scope="col">
+                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mdDetalle">Agregar</button>
+                    </th>                            
+                  </tr>
+                </thead>
+                <tbody id="tblDetalle">
+                </tbody>                        
+              </table>                            
+            </div>         
+            <hr class="my-4">       
+            <button type="submit" class="w-100 btn btn-success btn-lg">Guardar</button>
+          </form>
+        </div>
+      </div>
+      <!-- Modal Bloque-->
+      <div class="modal fade" id="mdDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="lblNombre">Detalle</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="col-sm-6">
+                <label for="txtTipo" class="form-label">Tipo</label>
+                <input type="text" class="form-control" id="txtTipo" placeholder="" value="">                
+              </div>
+              
+              <div class="col-sm-4">
+                <label for="txtDescripcion" class="form-label">Descripcion</label>
+                <input type="number" step="7" value="7" min="7" class="form-control" id="txtDescripcion">                
+              </div>              
+            </div>
+            <div class="modal-footer">
+              <button id="btnAgregar" type="button" class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br><br><br>
+    </main>
+    <footer>
+    </footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>       
+    <script src="js/main.js"></script> 
+    <script src="js/adicional-Form.js"></script> 
+</body>
+</html>

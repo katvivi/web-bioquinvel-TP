@@ -7,7 +7,7 @@ import com.bioquinvel.backend.models.entities.Producto;
 
 
 public interface IProductoService {
-	public void save(Producto producto);
+	public void save(Producto p);
 	public Optional<Producto> findById(Integer id);
 	public Optional<Producto> findByNombre(String nombre);
 	public void delete(Integer id);

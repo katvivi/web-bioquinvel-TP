@@ -37,6 +37,6 @@ public class ClienteService implements IClienteService{
 	@Override
 	@Transactional(readOnly=true)
 	public List<Cliente> findAll() {		
-		return (List<Cliente>) repository.findAll();
+		return repository.findAll();
 	}
 }

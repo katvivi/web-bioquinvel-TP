@@ -7,7 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 
 @Entity
 @Table(name="clientes")
@@ -20,20 +27,21 @@ public class Cliente extends Persona  implements Serializable {
 	@Column(name="id_cliente")
 	private Integer idcliente;
 	
-	@Column(name="email_Cliente")
+	@Column(name="emailCliente")
 	private String emailCliente;
 	
-	@Column(name="clave_cliente")
-	private String claveCliente;
-
 	@Column(name="ciudad")
 	private String ciudad;
 	
-	@Column(name="direccion_Cliente")
-	private String direccionCliente;
+	@Column(name="direccion")
+	private String direccion;
 	
-	@Column(name="codigo_Postal")
+	@Column(name="codigoPostal")
 	private String codigoPostal;
+	
+	@JoinColumn(name="id_pedido", referencedColumnName="id_pedido")
+	@ManyToOne	
+	private Pedido pedido;
 	
 	public Cliente() {
 		super();
@@ -52,6 +60,14 @@ public class Cliente extends Persona  implements Serializable {
 		this.idcliente = idcliente;
 	}
 
+	public String getEmailCliente() {
+		return emailCliente;
+	}
+
+	public void setEmailCliente(String emailCliente) {
+		this.emailCliente = emailCliente;
+	}
+
 	public String getCiudad() {
 		return ciudad;
 	}
@@ -60,12 +76,12 @@ public class Cliente extends Persona  implements Serializable {
 		this.ciudad = ciudad;
 	}
 
-	public String getDireccionCliente() {
-		return direccionCliente;
+	public String getDireccion() {
+		return direccion;
 	}
 
-	public void setDireccionCliente(String direccionCliente) {
-		this.direccionCliente = direccionCliente;
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
 	public String getCodigoPostal() {
@@ -75,20 +91,13 @@ public class Cliente extends Persona  implements Serializable {
 	public void setCodigoPostal(String codigoPostal) {
 		this.codigoPostal = codigoPostal;
 	}
-
-	public String getClaveCliente() {
-		return claveCliente;
+	@JsonIgnore
+	public Pedido getPedido() {
+		return pedido;
 	}
-
-	public void setClaveCliente(String claveCliente) {
-		this.claveCliente = claveCliente;
+	@JsonProperty(access = Access.WRITE_ONLY)
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
-
-	public String getEmailCliente() {
-		return emailCliente;
-	}
-
-	public void setEmailCliente(String emailCliente) {
-		this.emailCliente = emailCliente;
-	}	
+	
 }

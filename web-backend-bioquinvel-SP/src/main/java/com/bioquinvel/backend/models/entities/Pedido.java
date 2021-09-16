@@ -1,7 +1,7 @@
 package com.bioquinvel.backend.models.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -12,10 +12,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.annotation.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="pedidos")
@@ -32,22 +36,26 @@ public class Pedido implements Serializable {
 	@Column(name="fecha_Pedido")
 	private Calendar fechaPedido;
 	
-	@Column(name="fecha_Entrega")
-	private Calendar fechaEntrega;
+	@Column(name="tarjetas")
+	private String tarjetas;
 	
-	@Column(name="total_compra")
-	private float total;
+	@Column(name="calificacion")
+	private String calificacion;
 	
-	@Column(name="aplica_descuento")
-	private float descuento;
+	@JoinColumn(name="id_producto", referencedColumnName= "id_producto")
+	@ManyToOne(fetch = FetchType.LAZY)        
+	private Producto producto;
+				
+	@JoinColumn(name = "id_detalle", referencedColumnName= "id_detalle")
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Detalle detalle;
 	
-	@Column(name="recargo_envio")
-	private float recargo;
+	@OneToMany(mappedBy="pedido", fetch = FetchType.LAZY)
+	@JsonIgnore
+	private List<Cliente> cliente;
 	
-	//mappedBy va el nombre del atributo de esta clase [pedido] en la clase asociada [LineaPedido]
-	@OneToMany(mappedBy="pedido", fetch = FetchType.LAZY)	
-	private List<Producto> producto;
-	
+	@Transient	
+	private transient String nombre; 
 	public Pedido() {
 		super();
 	}
@@ -65,55 +73,65 @@ public class Pedido implements Serializable {
 		this.idPedido = idPedido;
 	}
 
-	public Calendar getFechaPedido() {
-		return fechaPedido;
+	public String getFechaPedido() {
+		if(this.fechaPedido == null) return "";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy");
+		return sdf.format(fechaPedido.getTime());
 	}
 
 	public void setFechaPedido(Calendar fechaPedido) {
 		this.fechaPedido = fechaPedido;
 	}
 
-	public Calendar getFechaEntrega() {
-		return fechaEntrega;
-	}
-
-	public void setFechaEntrega(Calendar fechaEntrega) {
-		this.fechaEntrega = fechaEntrega;
-	}
-
-	public float getTotal() {
-		return total;
-	}
-
-	public void setTotal(float total) {
-		this.total = total;
-	}
-
-	public float getDescuento() {
-		return descuento;
-	}
-
-	public void setDescuento(float descuento) {
-		this.descuento = descuento;
-	}
-
-	public float getRecargo() {
-		return recargo;
-	}
-
-	public void setRecargo(float recargo) {
-		this.recargo = recargo;
-	}
-
-	public List<Producto> getProducto() {
-		if (producto == null) 
-			producto=new ArrayList<Producto>();
 	
+	public String getTarjetas() {
+		return tarjetas;
+	}
+
+	public void setTarjetas(String tarjetas) {
+		this.tarjetas = tarjetas;
+	}
+
+	public List<Cliente> getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(List<Cliente> cliente) {
+		this.cliente = cliente;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	
+
+	public String getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(String calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public Producto getProducto() {
 		return producto;
 	}
 
-	public void setProducto(List<Producto> producto) {
+	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	public Detalle getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(Detalle detalle) {
+		this.detalle = detalle;
 	}
 	
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="css/style.css"></script>
+</head>
+<body>    
+    
+      <!-- Menu principal -->
+      <header>     
+        <nav  class="navbar navbar-expand-lg navbar-light p-3 nav"  id="menu">
+           <div class="container">
+              <a class="navbar-brand" href="index.html">
+                 <img src="image/logo-Bioquinvel_Mesa de trabajo 1.png" alt="" style="width:25%">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="btn btnB" aria-expanded="false" href="cliente-Form.html">Registro Cliente</a>
+                <a class="btn btnB" aria-expanded="false" href="#">Pedido </a>
+                <a class="btn btnB" aria-expanded="false" href="#">Contactos</a>
+                <a class="btn a text-white" href="login-Bioquinvel.html">Login</a>
+             </div>
+           </div>
+         </nav>                  
+     </header>
+     <!-- Fin del menu principal --> 
+
+    <main class="container w-75 bg-light mt-4 rounded shadow">
+      <div class="py-5 text-center">        
+        <h2>Pedido</h2>
+        <p class="lead">Registro y listado <strong id="lblNombreDetalle"></strong></p>
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <img width="95%" src="image/producto2.jpg" >
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Registro de Pedido</h4>
+          <hr class="my-4">
+          <form id="frmPedido" action="index.html" class="needs-validation" novalidate  method="POST">
+            <div class="row g-3">              
+
+              <div class="col-sm-6">
+                <label for="txtDetalle" class="form-label">Detalle:</label>
+                <select class="form-select" id="txtDetalle" required></select>                
+              </div>
+              
+              <div class="col-sm-6">
+                <label for="txtFormula" class="form-label">Fórmula:</label>
+                <select class="form-select" id="txtFormula" required>                  
+                </select>                
+              </div>
+
+              <div class="col-sm-6">
+                <label for="txtFecha" class="form-label">Fecha Pedido:</label>
+                <input type="date" value="10" min="1" class="form-control" id="txtFecha" required>                
+              </div>
+
+              <div class="col-sm-6">
+                <label for="txtAceptamos" class="form-label">Aceptamos:</label>
+                <select id="txtAceptamos" class="form-select">
+                    <option value="0">-- Seleccionar --</option>
+                    <option value="Paypal">Pay pal</option>
+                    <option value="Visa">Visa</option>
+                    <option value="MasterCard">MasterCard</option>
+                  </select>            
+              </div>
+
+              <div class="col-sm-6">
+                <label for="txtCalificacion" class="form-label">Calificación:</label>
+                <select id="txtCalificacion" class="form-select">
+                    <option value="0">-- Seleccionar --</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                  </select>             
+              </div>
+              
+            </div>         
+            <hr class="my-4">       
+            <button type="submit" id="btnGuardar" class="w-100 btn btn-success btn-lg">Guardar</button>
+          </form>
+        </div>
+      </div>      
+
+      
+    </main>
+    <footer>
+    </footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/form-validation.js"></script>        
+    <script src="js/main.js"></script> 
+    <script src="js/pedido-Form.js"></script> 
+</body>
+</html>

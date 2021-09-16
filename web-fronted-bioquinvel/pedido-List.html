@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGF: List</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>   
+    <script src="css/style.css"></script>
+</head>
+<body>    
+    <!-- Menu principal -->
+    <header>     
+      <nav  class="navbar navbar-expand-lg navbar-light p-3 nav"  id="menu">
+         <div class="container">
+            <a class="navbar-brand" href="index.html">
+               <img src="image/logo-Bioquinvel_Mesa de trabajo 1.png" alt="" style="width:25%">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Administrador
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item" href="admin-Form.html">Registro</a></li>
+                    <li><a class="dropdown-item" href="admin-List.html">Listado</a></li>
+                  </ul>
+              </div>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Producto
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <li><a class="dropdown-item" href="producto-Form.html">Registro</a></li>
+                  <li><a class="dropdown-item" href="#">Listado</a></li>
+                </ul>
+              </div>
+  
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btnB dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Detalle
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <li><a class="dropdown-item" href="adicional-Form.html">Registro</a></li>
+                  <li><a class="dropdown-item" href="adicional-List.html">Listado</a></li>
+                </ul>
+              </div>
+              <a class="btn btnB" aria-expanded="false" href="cliente-List.html">Clientes</a>
+           </div>
+         </div>
+       </nav>                  
+   </header>
+   <!-- Fin del menu principal -->
+    <main class="container w-75 bg-light mt-4 rounded shadow">
+        <section class="py-5 container">          
+          <h3>Listado de Pedidos</h3>
+          <hr>          
+          <a href="pedido-Form.html" class="btn btn-success">Nueva</a>
+          <table class="table">
+            <thead>
+              <tr>  
+                <th scope="col">Fecha Pedido</th>
+                <th scope="col">Formula</th>
+                <th scope="col">Detalle</th>
+                <th scope="col">Aceptamos</th>                              
+              </tr>
+            </thead>
+            <tbody id="tblPedido">
+            </tbody>                        
+          </table>
+
+        </section>      
+    </main>
+    <footer></footer>
+    <!-- Vincula jQuery con el index.html -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pedido-List.js"></script>
+</body>
+</html>

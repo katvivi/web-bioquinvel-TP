@@ -1,19 +1,22 @@
 package com.bioquinvel.backend.models.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="productos")
+@Table(name="producto")
 public class Producto implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -30,21 +33,15 @@ public class Producto implements Serializable {
 	@Column(name="nombre")
 	private String nombre;
 	
-	@Column(name="descripcion")
-	private String descripcion;
-	
 	@Column(name="precio")
 	private float precio;
 	
 	@Column(name="cantidad")
 	private int cantidad;
 	
-	@JoinColumn(name="id_pedido", referencedColumnName= "id_pedido")
-	@ManyToOne
-	private Pedido pedido;
+	@OneToMany(mappedBy="producto", fetch = FetchType.LAZY)	
+	private List<Pedido> pedido;
 	
-	/*@OneToOne(mappedBy = "producto")
-	private LineaPedido lineapedido;*/
 
 	public Producto() {
 		super();
@@ -79,14 +76,6 @@ public class Producto implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
 	public float getPrecio() {
 		return precio;
 	}
@@ -94,23 +83,27 @@ public class Producto implements Serializable {
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
-
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
+	
+	
 
 	public int getCantidad() {
 		return cantidad;
+	}
+	@JsonIgnore
+	public List<Pedido> getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(List<Pedido> pedido) {
+		this.pedido = pedido;
 	}
 
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-
+	
+	
+	
 	
 	
 }

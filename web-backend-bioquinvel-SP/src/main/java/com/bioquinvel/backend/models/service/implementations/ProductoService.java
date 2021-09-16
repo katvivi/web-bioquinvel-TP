@@ -19,8 +19,8 @@ public class ProductoService implements IProductoService {
 
 	@Override
 	@Transactional
-	public void save(Producto producto) {
-		repository.save(producto);
+	public void save(Producto p) {
+		repository.save(p);
 	}
 
 	@Override

@@ -4,6 +4,9 @@ body{
     background: -webkit-linear-gradient(to right, #ffa751, #ffe259);  
     background: linear-gradient(to right, #ffa751, #ffe259); 
 }
+main{
+    background:white;
+}
 .bg{
     background-image: url(https://image.freepik.com/foto-gratis/vista-frontal-concepto-ciencia-frasco_23-2148623715.jpg);
     background-position: center center;
@@ -19,10 +22,6 @@ body{
 .btnB{
     background-color:#F2CB05 ;
     color: white;
-}
-
-.div{
-    background: white;
 }
 
 footer{
