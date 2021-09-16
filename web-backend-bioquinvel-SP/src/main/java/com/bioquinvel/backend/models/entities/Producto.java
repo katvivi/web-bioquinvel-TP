@@ -84,8 +84,6 @@ public class Producto implements Serializable {
 		this.precio = precio;
 	}
 	
-	
-
 	public int getCantidad() {
 		return cantidad;
 	}

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos</title>
+    <title>Regitro Pedido</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="css/style.css"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>    
     
@@ -23,10 +23,10 @@
               </button>
     
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <a class="btn btnB" aria-expanded="false" href="cliente-Form.html">Registro Cliente</a>
+                <a class="btn btnB" aria-expanded="false" href="cliente-Form.html">Cliente</a>
                 <a class="btn btnB" aria-expanded="false" href="#">Pedido </a>
                 <a class="btn btnB" aria-expanded="false" href="#">Contactos</a>
-                <a class="btn a text-white" href="login-Bioquinvel.html">Login</a>
+                <a class="btn btnB" href="login-Bioquinvel.html">Login</a>
              </div>
            </div>
          </nav>                  
@@ -53,7 +53,7 @@
                 <label for="txtDetalle" class="form-label">Detalle:</label>
                 <select class="form-select" id="txtDetalle" required></select>                
               </div>
-              
+
               <div class="col-sm-6">
                 <label for="txtFormula" class="form-label">Fórmula:</label>
                 <select class="form-select" id="txtFormula" required>                  
@@ -76,15 +76,8 @@
               </div>
 
               <div class="col-sm-6">
-                <label for="txtCalificacion" class="form-label">Calificación:</label>
-                <select id="txtCalificacion" class="form-select">
-                    <option value="0">-- Seleccionar --</option>
-                    <option value="5">5</option>
-                    <option value="4">4</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                    <option value="1">1</option>
-                  </select>             
+                <label for="txtCantidad" class="form-label">Cantidad:</label>
+                <input type="number" class="form-control" id="txtCantidad">           
               </div>
               
             </div>         
@@ -93,9 +86,9 @@
           </form>
         </div>
       </div>      
-
-      
+      <br><br>
     </main>
+    <br><br>
     <footer>
     </footer>
     <!-- Vincula jQuery con el index.html -->

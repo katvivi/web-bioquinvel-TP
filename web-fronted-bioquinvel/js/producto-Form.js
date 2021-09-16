@@ -78,7 +78,7 @@ function save(){
     var requestBody = JSON.stringify(producto);
     console.log(requestBody);
     //Utilizar jQuery AJAX para enviar al Backend
-    if(producto.idproducto == 0){
+    if(producto.idProducto == ""){
         $.ajax({        
             type: "POST", //Verbo de HTTP a utilizar
             url: "http://localhost:8080/producto/create", //Dirección para realizar la petición HTTP

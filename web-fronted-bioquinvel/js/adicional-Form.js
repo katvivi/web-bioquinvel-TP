@@ -57,7 +57,7 @@ function remove(index){
 function add(){
     let detalle = {
         "tipo" : $("#txtCodigo").val(),
-        "descripcion" : $("#txtNumeroCamas").val(),
+        "descripcion" : $("#txtDescripcion").val(),
     }
     detalles.push(detalle);
     list();

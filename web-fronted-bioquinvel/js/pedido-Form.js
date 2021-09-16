@@ -5,10 +5,35 @@ function load(){
         contentType : "application/json",
         dataType : "json",
         success : function(response){                             
-            $("#txtpedido").empty();
+            $("#txtFormula").empty();
             let productos = response;
             productos.forEach(producto => {
-                $("#txtpedido").append("<option value=" + producto.idProducto + ">"+ pedido.nombre + "</option>");        
+                $("#txtFormula").append("<option value=" + producto.idProducto + ">"+ producto.nombre + "</option>");        
+    });                         
+        },
+        error : function(err){
+            console.error(err);
+        },
+        complete : function(xhr, textStatus){
+            if(xhr.status == 404)
+            {
+                alert(xhr.responseText);                    
+            }
+        }
+    });    
+
+            //Detalle Formula
+
+    $.ajax({        
+        type: "GET", //Verbo de HTTP a utilizar
+        url: "http://localhost:8080/adicional/list", //Dirección para realizar la petición HTTP        
+        contentType : "application/json",
+        dataType : "json",
+        success : function(response){                             
+            $("#txtDetalle").empty();
+            let adicional = response;
+            adicional.forEach(adi => {
+                $("#txtDetalle").append("<option value=" + adi.idAdicional + ">"+ adi.codigo + " - " + adi.aroma +"</option>");        
     });                         
         },
         error : function(err){
@@ -86,7 +111,7 @@ function serializeForm(){
     let pedido = {
         "fechaPedido" : $("#txtFecha").val(),
         "tarjetas" : $("#txtAceptamos").val(),
-        "calificacion" : $("#txtCalificacion").val(),
+        "calificacion" : $("#txtCantidad").val(),
         "producto" : {
             "idProducto" : $('#txtFormula').find(":selected").val()
         },
@@ -111,7 +136,8 @@ function save(){
         crossDomain: true,
         dataType: "json",
         success : function(response){
-            console.log(response);         
+            console.log(response);  
+            alert("Pedido Realizado");
 		},
 		error : function(err){
 			console.error(err);

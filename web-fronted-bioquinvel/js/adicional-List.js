@@ -7,13 +7,14 @@ function retrieve(id){
         dataType : "json",
         success : function(response){
             console.log(response);    
-            let adicional = response;            
+            let adicional = response;  
+            $("#spCodigo").html(adicional.codigo);          
             $("#spAroma").html(adicional.aroma);
             $("#spColorante").html(adicional.colorante);
             $("#spVitamina").html(adicional.vitamina);            
             $("#txtIdAdicional").val(adicional.idAdicional);
             $("#tblDetalle").empty(); //Eliminar el contenido del tbody de la tabla
-            invernadero.divisiones.forEach(detalle => {        
+            adicional.formulas.forEach(detalle => {        
                 $("#tblDetalle").append('<tr>'
                     + '<td>' + detalle.tipo +'</td>'
                     + '<td>' + detalle.descripcion +'</td>'            
@@ -30,6 +31,7 @@ function show(lista){
     $("#tblAdicional").empty(); //Eliminar el contenido del tbody de la tabla
     lista.forEach(adicional => {        
         $("#tblAdicional").append('<tr>'            
+            + '<td>' + adicional.codigo +'</td>'
             + '<td>' + adicional.aroma +'</td>'
             + '<td>' + adicional.colorante +'</td>'
             + '<td>' + adicional.vitamina +'</td>'            

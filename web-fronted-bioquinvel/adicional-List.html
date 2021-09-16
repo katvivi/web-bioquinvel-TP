@@ -7,7 +7,7 @@
     <title>SGF: List</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="css/style.css"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>    
   <!-- Menu principal -->
@@ -64,6 +64,7 @@
           <table class="table">
             <thead>
               <tr>                
+                <th scope="col">Codigo</th>
                 <th scope="col">Aroma</th>
                 <th scope="col">Colorante</th>
                 <th scope="col">Vitamina</th>               
@@ -79,10 +80,11 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="lblNombre"></h5>
+                <h5 class="modal-title" id="spCodigo"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">               
+              <div class="modal-body">     
+                    
                     <label>Aroma:</label>
                     <span id="spAroma"></span><br>
                     <label>Colorante:</label>
@@ -108,9 +110,10 @@
             </div>
           </div>
         </div>
-
-        </section>      
+        </section> 
+        <br><br>     
     </main>
+    <br><br>
     <footer></footer>
     <!-- Vincula jQuery con el index.html -->
     <script src="js/jquery-3.6.0.min.js"></script>

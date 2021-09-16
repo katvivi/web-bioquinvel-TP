@@ -12,7 +12,7 @@ function retrieve(id){
             $("#lblNombre").html(producto.nombre);
             $("#spCodigo").html(producto.codigo);
             $("#spFormula").html(producto.nombre);
-            $("#spPecio").html(producto.precio);
+            $("#spPrecio").html(producto.precio);
             $("#spCantidad").html(producto.cantidad);
             $("#txtIdProducto").val(producto.idProducto); //Setter
             //let valor = $("#txtIdproducto").val(); //Getter

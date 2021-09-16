@@ -33,7 +33,7 @@ public class PedidoController {
 	public ResponseEntity<?> create(@RequestBody Pedido p) {
 		try {
 			service.save(p);
-			return ResponseEntity.status(HttpStatus.CREATED).body(p);
+			return ResponseEntity.status(HttpStatus.CREATED).body("Pedido Realizado");
 		}
 		catch(Exception ex) {
 			
