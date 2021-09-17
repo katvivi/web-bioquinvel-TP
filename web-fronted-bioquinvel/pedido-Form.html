@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>    
     
@@ -32,11 +33,12 @@
          </nav>                  
      </header>
      <!-- Fin del menu principal --> 
-
+    
+    
     <main class="container w-75 bg-light mt-4 rounded shadow">
       <div class="py-5 text-center">        
         <h2>Pedido</h2>
-        <p class="lead">Registro y listado <strong id="lblNombreDetalle"></strong></p>
+        <p class="lead">  <strong id="lblNombreDetalle"></strong></p>
       </div>
   
       <div class="row g-5">
@@ -51,7 +53,7 @@
 
               <div class="col-sm-6">
                 <label for="txtDetalle" class="form-label">Detalle:</label>
-                <select class="form-select" id="txtDetalle" required></select>                
+                <select class="form-select" id="txtDetalle" required onchange="descripcion()"></select>                
               </div>
 
               <div class="col-sm-6">
@@ -59,6 +61,11 @@
                 <select class="form-select" id="txtFormula" required>                  
                 </select>                
               </div>
+
+              <div class="col-sm-6">
+                <label for="txtDescripcion" class="form-label">Descripción:</label>
+                <textarea class="form-control" id="txtDescripcion" rows="4" cols="50" disabled></textarea>
+              </div><br>
 
               <div class="col-sm-6">
                 <label for="txtFecha" class="form-label">Fecha Pedido:</label>
@@ -96,5 +103,7 @@
     <script src="js/form-validation.js"></script>        
     <script src="js/main.js"></script> 
     <script src="js/pedido-Form.js"></script> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 </html>

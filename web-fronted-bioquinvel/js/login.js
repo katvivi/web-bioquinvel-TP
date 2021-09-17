@@ -21,7 +21,7 @@ function login() {
         dataType: "json",
         complete: function (response) {
             if (response.status == 200)
-                window.location.replace("producto-form.html");
+                window.location.replace("admin-Form.html");
             if (response.status == 401)
                 alert("401 NOT AUTHORIZED");
             if (response.status == 404)

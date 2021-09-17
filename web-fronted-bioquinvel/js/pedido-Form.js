@@ -9,7 +9,7 @@ function load(){
             let productos = response;
             productos.forEach(producto => {
                 $("#txtFormula").append("<option value=" + producto.idProducto + ">"+ producto.nombre + "</option>");        
-    });                         
+            });                         
         },
         error : function(err){
             console.error(err);
@@ -31,13 +31,16 @@ function load(){
         dataType : "json",
         success : function(response){                             
             $("#txtDetalle").empty();
+            $("#txtDetalle").append("<option>Seleccione Detalle</option>");
+            
             let adicional = response;
             adicional.forEach(adi => {
-                $("#txtDetalle").append("<option value=" + adi.idAdicional + ">"+ adi.codigo + " - " + adi.aroma +"</option>");        
-    });                         
+                $("#txtDetalle").append("<option value=" + adi.idAdicional + ">"+ adi.codigo + "</option>");        
+            });                         
         },
         error : function(err){
             console.error(err);
+            
         },
         complete : function(xhr, textStatus){
             if(xhr.status == 404)
@@ -136,13 +139,35 @@ function save(){
         crossDomain: true,
         dataType: "json",
         success : function(response){
+            
             console.log(response);  
-            alert("Pedido Realizado");
 		},
 		error : function(err){
 			console.error(err);
 		}        
     });
+}
+
+function descripcion(){
+    let id = $('#txtDetalle').val();
+    $.ajax({        
+        type: "GET", //Verbo de HTTP a utilizar
+        url: "http://localhost:8080/adicional/retrieve/"+id, //Dirección para realizar la petición HTTP        
+        contentType : "application/json",
+        dataType : "json",
+        success : function(response){  
+            $("#txtDescripcion").val(response.aroma + "\n" + response.colorante + "\n" + response.vitamina);                      
+        },
+        error : function(err){
+            console.error(err);
+            
+        },
+        complete : function(xhr, textStatus){
+            if(xhr.status == 400){
+                $("#txtDescripcion").val("");                   
+            }
+        }
+    });    
 }
 
 $(function() {
@@ -157,6 +182,14 @@ $(function() {
     
     $("#btnBuscar").click(function(){        
         retrieve();
+        
     });    
     
+    $("#btnGuardar").click(function(){
+        Swal.fire(
+            'Correcto',
+            'You clicked the button!',
+            'success'
+        );
+    });
 });

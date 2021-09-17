@@ -77,18 +77,18 @@
             <div class="row g-3">
               <div class="col-12">
                 <label for="txtNombre" class="form-label">Código: </label>
-                <input type="text" class="form-control" id="txtCodigo" required>
+                <input type="text" class="form-control" id="txtCodigo" required minlength="6">
               </div>
 
               <div class="col-sm-6">
                 <label for="txtColor1" class="form-label">Fórmula de: </label>
-                <input type="text" class="form-control" id="txtFormula" placeholder="" value="" required>
+                <input type="text" class="form-control" id="txtFormula" placeholder="" value="" min="1" required>
                
               </div>
   
               <div class="col-sm-6">
                 <label for="txtPrecio" class="form-label">Precio:</label>
-                <input type="number" class="form-control" id="txtPrecio" placeholder="" value="10">                
+                <input type="number" class="form-control" id="txtPrecio" placeholder="" value="" min="5">                
               </div>
               
               <div class="col-sm-4">
