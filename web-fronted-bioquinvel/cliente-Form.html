@@ -51,22 +51,22 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="txtCedulaCliente" class="form-label">Cédula:</label>
-                <input type="text" class="form-control" id="txtCedulaCliente" placeholder="Número de cédula" >                
+                <input type="text" class="form-control" id="txtCedulaCliente" placeholder="Número de cédula" minlength="10" maxlength="10" required>                
               </div>
               
               <div class="col-sm-6">
 								<label for="txtNombreCliente" class="form-label">Nombre: </label>
-								<input type="text" class="form-control" id="txtNombreCliente" placeholder="Ingrese su nombre" maxlength="10"/>
+								<input type="text" class="form-control" id="txtNombreCliente" placeholder="Ingrese su nombre" required/>
 							</div>
 
 							<div class="col-sm-6">
 								<label for="txtTelefonoCliente">Teléfono:</label>
-								<input type="text" class="form-control" id="txtTelefonoCliente" placeholder="Número de teléfono"  />
+								<input type="text" class="form-control" id="txtTelefonoCliente" placeholder="Número de teléfono" minlength="10" maxlength="10" required />
 							</div>
 
 							<div class="col-sm-6">
 								<label for="txtEmailCliente">Email:</label>
-								<input type="email" class="form-control" id="txtEmailCliente" placeholder="Ingrese su email" maxlength="10"/>
+								<input type="email" class="form-control" id="txtEmailCliente" placeholder="Ingrese su email" required/>
               </div>  
 
               <h4 class="mb-3">Registro Dirección</h4>
@@ -74,8 +74,8 @@
 
               <div class="col-sm-6">
                 <label for="txtCodigo" class="form-label">Ciudad:</label> 
-                  <select id="txtCiudadCliente" class="form-select">
-                    <option value="0">-- Seleccionar --</option>
+                  <select id="txtCiudadCliente" class="form-select" required>
+                    <option value="0" >-- Seleccionar --</option>
                     <option value="Quito">Quito</option>
                     <option value="Latacunga">Latacunga</option>
                     <option value="Ambato">Ambato</option>
@@ -85,7 +85,7 @@
 
               <div class="col-sm-6">
                 <label for="txtDireccion" class="form-label">Direccion:</label>
-                <input type="text"  class="form-control" id="txtDireccion">                
+                <input type="text"  class="form-control" id="txtDireccion" required>                
               </div>
 
               <div class="col-sm-6">
